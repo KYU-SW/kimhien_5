@@ -12,13 +12,13 @@
     <style>
         :root {
             /* 건양대학교 메인 그린 컬러 톤 적용 */
-            --primary-color: #d1a0cb; 
-            --primary-light: #bfb4ff;
-            --primary-dark: #c7b8b8;
+            --primary-color: #f5a9d0; 
+            --primary-light: #ffd6eb;
+            --primary-dark: #d8b4f8;
             --text-color: #0c0a0a;
             --text-light: #000000;
-            --bg-color: #fdcff9;
-            --white: #eee8e8;
+            --bg-color: #fff5fb;
+            --white: #ffffff;
             --transition: all 0.3s ease;
         }
 
@@ -88,23 +88,29 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f8b4d9 0%, #d6c1ff 100%);
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
             text-align: center;
         }
-
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 4px 12px rgba(255,255,255,0.25);
+            letter-spacing: -2px;
         }
-
-        .hero .role {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
+       .hero .role {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+            letter-spacing: 1px;
         }
-
         .container {
             max-width: 1100px;
             margin: -3rem auto 3rem;
@@ -118,6 +124,11 @@
             border-radius: 12px;
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+            margin-top:-120px;
+            position:relative;
+            z-index:5;
+
             margin-bottom: 3rem;
             text-align: center;
         }
@@ -127,6 +138,24 @@
             margin-bottom: 1rem;
         }
 
+        .split-layout{
+           display:flex;
+           align-items:center;
+           gap:50px;
+        }
+
+        .about-image img{
+          width:280px;
+          height:350px;
+          object-fit:cover;
+          border-radius:30px;
+        }
+
+        .about-text{
+          flex:1;
+          text-align:left;
+        }
+
         /* Cards Layout (CSS Grid) */
         .section-title {
             text-align: center;
@@ -134,19 +163,24 @@
             color: var(--text-color);
         }
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        .card-grid{
+           display:grid;
+           grid-template-columns:repeat(3,1fr);
+           gap:30px;
+           margin-bottom:3rem;
         }
 
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
+
+       .card {
+          background: var(--white);
+          border-radius: 30px;
+          overflow: hidden;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+          transition: var(--transition);
+
+          display:flex;
+          flex-direction:column;
+        justify-content:space-between;
         }
 
         .card:hover {
@@ -156,7 +190,7 @@
 
         .card-img {
             width: 100%;
-            height: 200px;
+            height: 240px;
             object-fit: cover;
         }
 
@@ -240,7 +274,7 @@
 <!-- Top Navigation -->
 <nav class="navbar">
     <a href="#" class="nav-logo">
-        <i class="fa-solid fa-vr-cardboard"></i> DXP Lab
+        <i class="fa-solid fa-vr-cardboard"></i> Kim Hien Portfolio
     </a>
     <ul class="nav-links">
         <li><a href="#" class="active"><i class="fa-solid fa-wand-magic-sparkles"></i> 현재 페이지 (Modern)</a></li>
@@ -251,16 +285,27 @@
 
 <!-- Hero Section -->
 <header class="hero">
-    <h1>Kim Hien</h1>
+    <h1>안녕하세요, 김히엔입니다</h1>
     <p class="role">XR국방 Student</p>
 </header>
 
 <main class="container">
 
     <!-- About Section -->
-  <section class="about-card">
-    <h2><i class="fa-solid fa-user"></i> About Me</h2>
-    <p>안녕하세요. 저는 한국에서 공부 중인 베트남 유학생 김히엔입니다. XR 콘텐츠, 게임 제작, 디지털 디자인 분야에 관심이 있습니다. 새로운 것을 배우는 것을 좋아하고 책임감 있게 프로젝트를 수행하는 것이 저의 강점입니다.</p>
+  <section class="about-card split-layout">
+
+    <div class="about-image">
+        <img src="https://i.pinimg.com/736x/8e/95/8d/8e958d7dff62d9803c3811282968209b.jpg">
+    </div>
+
+    <div class="about-text">
+        <h2><i class="fa-solid fa-user"></i> About Me</h2>
+
+        <p>
+        새로운 배움과 경험을 통해 꾸준히 성장해가는 학생입니다.
+        </p>
+    </div>
+
 </section>
     <h2 class="section-title">My Projects & Interests</h2>
     
@@ -272,7 +317,7 @@
             <div class="card-content">
                 <i class="fa-solid fa-shield-halved"></i>
                 <h3>Team Projects</h3>
-                <p>팀 프로젝트를 진행하며 발표 자료 제작과 아이디어 정리 역할을 담당했습니다. 다른 사람들과 협업하며 소통 능력을 키우고 있습니다.</p>
+                <p>팀 프로젝트를 통해 협업과 소통 능력을 키우고 있습니다.</p>
             </div>
         </article>
 
@@ -282,7 +327,7 @@
             <div class="card-content">
                 <i class="fa-solid fa-eye"></i>
                 <h3>Language Skills</h3>
-                <p>한국어와 베트남어를 사용할 수 있으며, 현재 TOPIK 중급 수준을 목표로 공부하고 있습니다.</p>
+                <p>한국어, 베트남어 그리고 기본적인 영어 소통이 가능합니다.</p>
             </div>
         </article>
 
@@ -292,7 +337,7 @@
             <div class="card-content">
                 <i class="fa-solid fa-bed-pulse"></i>
                <h3>Creative Interests</h3>
-               <p> 디지털 콘텐츠, 사진, 디자인 그리고 감성적인 공간 연출에 관심이 있습니다. 새로운 스타일과 아이디어를 탐색하는 것을 좋아합니다.</p>
+               <p>새로운 스타일과 감성적인 분위기를 좋아합니다.</p>
             </div>
         </article>
     </section>
@@ -311,10 +356,6 @@
 
     <a href="https://github.com/KYU-SW/kimhien_5" class="btn btn-outline" target="_blank">
         <i class="fa-brands fa-github"></i> GitHub
-    </a>
-
-    <a href="#" class="btn btn-outline">
-        <i class="fa-solid fa-globe"></i> Lab Website
     </a>
 
 </div>
